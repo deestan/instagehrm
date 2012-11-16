@@ -1,5 +1,5 @@
 var express = require("express");
-var ig = require("./instagherm");
+var ig = require("./instagehrm");
 var formidable = require("formidable");
 var fs = require("fs");
 

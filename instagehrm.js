@@ -39,7 +39,7 @@ function saveImageInfo(data, next) {
   var id = data.upload.image.hash;
   var html =
     "<!doctype html>\n"+
-    "<title>INSTAGHERM " + id + "</title>\n"+
+    "<title>INSTAGEHRMED " + id + "</title>\n"+
     "<a href=\""+data.upload.links.imgur_page+"\">"+
     "<img src=\""+data.upload.links.original+"\">"+
     "</a>";
