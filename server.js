@@ -14,7 +14,7 @@ app.post('/1/upload', function (req, res) {
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
     if (err) return returnError(err);
-    var file = fs.createReadStream(files.image.path);
+    var file = files.image.path;
     ig.processImage(file, function(err, newfile) {
       if (err) return returnError(err);
       res.redirect(newfile);

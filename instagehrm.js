@@ -2,10 +2,12 @@ var fs = require("fs");
 var imgur = require("./immegrize.js");
 var cp = require("child_process");
 
+var outputFileCounter = 0;
+
 module.exports.processImage = processImage;
 
-function processImage(stream, next) {
-  horriblize(stream, function(err, newStream) {
+function processImage(file, next) {
+  horriblize(file, function(err, newStream) {
     if (err) return next(err);
     imgur.postImage(newStream, function(err, postedData) {
       if (err) return next(err);
@@ -14,23 +16,16 @@ function processImage(stream, next) {
   });
 }
 
-function horriblize(stream, next) {
-  var newName = "input";
-  var outName = "output.png";
-  var writeStream = fs.createWriteStream(newName);
-  stream.pipe(writeStream);
-  stream.on("end", function() {
-    writeStream.end();
-  });
-  writeStream.on("close", inFileReady);
+function horriblize(inName, next) {
+  outName = "output" + outputFileCounter++ + ".png";
+  inFileReady();
 
-  function inFileReady(err) {
-    if (err) return next(err);
-    cp.exec("python horriblize.py " + newName + " " + outName, outFileReady);
+  function inFileReady() {
+    cp.exec("python horriblize.py " + inName + " " + outName, outFileReady);
   }
 
   function outFileReady(err) {
-    fs.unlink(newName, function() {});
+    fs.unlink(inName, function() {});
     if (err) return next(err);
     var readStream = fs.createReadStream(outName);
     readStream.on("end", function() {

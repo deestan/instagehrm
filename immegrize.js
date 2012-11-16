@@ -4,7 +4,7 @@ var FormData = require("form-data");
 
 module.exports.postImage = postImage;
 
-var KEY = fs.readFileSync("imgur_anonymous_key");
+var KEY = fs.readFileSync("imgur_api_key");
 
 function postImage(fileStream, callback) {
   var form = new FormData();

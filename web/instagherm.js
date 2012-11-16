@@ -59,6 +59,15 @@ function cutHeads (canvas) {
   );
 }
 
+function blur (canvas) {
+  var mini = document.createElement("canvas");
+  mini.width = Math.floor(canvas.width / 100);
+  mini.height = Math.floor(canvas.height / 100);
+  mini.imageSmoothingEnabled = true;
+  mini.getContext('2d').drawImage(canvas, 0, 0);
+  canvas.getContext('2d').drawImage(mini, 0, 0);
+}
+
 var img = document.getElementById("img");
 var canvas = document.getElementById("canvas");
 var detected;
@@ -69,4 +78,5 @@ window.onload = function () {
   canvas.getContext('2d').drawImage(img, 0, 0);
   
   cutHeads(canvas);
+  blur(canvas);
 };

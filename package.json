@@ -1,0 +1,21 @@
+{
+  "name": "instagehrm",
+  "version": "0.0.0",
+  "description": "Make your pictures look as if they were taken by an inept photographer.",
+  "main": "server.js",
+  "dependencies": {
+    "form-data": "0.0.4",
+    "formidable": "~1.0.11",
+    "express": "~3.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Helge S. Holm <helge.holm@gmail.com>",
+  "license": "MIT"
+}
