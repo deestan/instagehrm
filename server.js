@@ -5,6 +5,7 @@ var fs = require("fs");
 
 var app = express();
 app.use(express.static(__dirname + "/web"));
+app.use(express.static(__dirname + "/" + ig.generatedHTMLFolder));
 
 app.post('/1/upload', function (req, res) {
   function returnError(err) {

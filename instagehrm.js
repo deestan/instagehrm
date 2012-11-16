@@ -3,7 +3,9 @@ var imgur = require("./immegrize.js");
 var cp = require("child_process");
 
 var outputFileCounter = 0;
+var generatedFolder = "../instagehrmed";
 
+module.exports.generatedHTMLFolder = generatedFolder;
 module.exports.processImage = processImage;
 
 function processImage(file, next) {
@@ -35,6 +37,10 @@ function horriblize(inName, next) {
   }
 }
 
+var generatedFolder = "../instagehrmed";
+if (!fs.existsSync(generatedFolder))
+  fs.mkDirSync(generatedFolder)
+
 function saveImageInfo(data, next) {
   var id = data.upload.image.hash;
   var html =
@@ -44,7 +50,7 @@ function saveImageInfo(data, next) {
     "<img src=\""+data.upload.links.original+"\">"+
     "</a>";
   var name = id + ".html";
-  fs.writeFile("web/" + name, html, function(err) {
+  fs.writeFile(generatedFolder + "/" + name, html, function(err) {
     if (err) return next(err);
     next(null, name);
   });
