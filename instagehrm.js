@@ -1,10 +1,13 @@
 var fs = require("fs");
 var imgur = require("./immegrize.js");
 var cp = require("child_process");
+var htmlizer = require("./htmlizer");
 
 var outputFileCounter = 0;
 var generatedFolder = "../instagehrmed";
+var imageDataFolder = "../instagehrmed-data";
 
+module.exports.imageDataFolder = imageDataFolder;
 module.exports.generatedHTMLFolder = generatedFolder;
 module.exports.processImage = processImage;
 
@@ -43,13 +46,18 @@ if (!fs.existsSync(generatedFolder))
 
 function saveImageInfo(data, next) {
   var id = data.upload.image.hash;
-  var html =
-    "<!doctype html>\n"+
-    "<title>INSTAGEHRMED " + id + "</title>\n"+
-    "<a href=\""+data.upload.links.imgur_page+"\">"+
-    "<img src=\""+data.upload.links.original+"\">"+
-    "</a>";
+
+  fw.writeFile(
+    imageDataFolder + "/" + id + ".json",
+    JSON.stringify(data),
+    function(err) {
+      // No biggie.
+    });
+  
+  var html = htmlizer.generatePage(data);
+
   var name = id + ".html";
+
   fs.writeFile(generatedFolder + "/" + name, html, function(err) {
     if (err) return next(err);
     next(null, name);
