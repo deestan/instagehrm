@@ -47,7 +47,7 @@ if (!fs.existsSync(generatedFolder))
 function saveImageInfo(data, next) {
   var id = data.upload.image.hash;
 
-  fw.writeFile(
+  fs.writeFile(
     imageDataFolder + "/" + id + ".json",
     JSON.stringify(data),
     function(err) {
