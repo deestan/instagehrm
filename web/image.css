@@ -55,8 +55,16 @@ a:hover {
 
 img {
     margin: 0;
+}
+
+img.landscape {
     width: 800px;
     height: 600px;
+}
+
+img.portrait {
+    width: 600px;
+    height: 800px;
 }
 
 .img-footer {
@@ -72,11 +80,30 @@ img {
     text-transform: uppercase;
     padding: 5px;
     height: 28px;
-    overflow: hidden;
     margin: 10px 0 0 0;
+    position: relative;
 }
 
 #shares > * {
-    vertical-align: middle !important;
+    vertical-align: middle;
     margin: 0px 10px 0px 10px;
+}
+
+#shares > div {
+    position: absolute;
+}
+
+#twat {
+    top: 5px;
+    right: 300px;
+}
+
+#goggle {
+    top: 7px;
+    right: 200px;
+}
+
+#face {
+    top: 8px;
+    right: 5px;
 }

@@ -10,7 +10,7 @@ app.use(express.static(__dirname + "/" + ig.generatedHTMLFolder));
 app.post('/1/upload', function (req, res) {
   function returnError(err) {
     res.statusCode = 500;
-    res.end(err);
+    res.end("" + err);
   }
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {

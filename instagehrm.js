@@ -40,9 +40,10 @@ function horriblize(inName, next) {
   }
 }
 
-var generatedFolder = "../instagehrmed";
 if (!fs.existsSync(generatedFolder))
   fs.mkDirSync(generatedFolder)
+if (!fs.existsSync(imageDataFolder))
+  fs.mkDirSync(imageDataFolder)
 
 function saveImageInfo(data, next) {
   var id = data.upload.image.hash;

@@ -5,6 +5,11 @@ module.exports.generatePage = generatePage;
 
 function generatePage(data) {
   var id = data.upload.image.hash;
+  var orientation = "landscape";
+  if (parseInt(data.upload.image.width, 10) <
+      parseInt(data.upload.image.height, 10)) {
+    orientation = "portrait";
+  }
   var html = "<!doctype html>\n"+
     "<link rel=stylesheet type=text/css href=image.css></link>\n"+
     "<title>INSTAGEHRMED : " + id + "</title>\n"+
@@ -23,17 +28,21 @@ function generatePage(data) {
     " <div class=title>INSTAGEHRMED : " + id + "</div>"+
     "</div>"+
     "<a href=\""+data.upload.links.imgur_page+"\">"+
-    " <img src=\""+data.upload.links.original+"\">"+
+    " <img class="+ orientation +" src=\""+data.upload.links.original+"\">"+
     "</a>"+
     "<div class=img-footer>click image to go to its <a href=http://www.imgur.com>imgur</a> page</div>"+
     "<div id=shares>"+
     "<span>twat this picture on face+</span>"+
     // twat
+    '<div id=twat>'+
     '<a href="https://twitter.com/share" class="twitter-share-button" data-text="i took a pitcure&quot;!" data-size="large" data-count="none" data-hashtags="instagehrm" data-dnt="true">Tweet</a>'+
+    '</div>'+
     // g+
-    '<div class="g-plusone" data-annotation="none"></div>'+
+    '<div id=goggle><div class="g-plusone" data-annotation="none"></div></div>'+
     // shareface
+    '<div id=face>'+
     '<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-action="recommend"></div>'+
+    '</div>'+
     // end shares
     '</div>'+
     // twatcode
