@@ -1,0 +1,1 @@
+/usr/bin/ssh -i /home/helge/amazon/ec2key.pem
