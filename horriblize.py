@@ -15,10 +15,10 @@ def horriblize(source, output):
     # add shit photographer effects
     shit = shitPhotographer()
 
-    # possibly rotate back
+    # 25% chance to leave in wrong orientation
     rotateBack = []
-    if len(rotateLandscape) > 0 and randint(0, 2) == 0:
-        rotateBack = ['rotate', '-90']
+    if len(rotateLandscape) > 0 and randint(0, 4) != 0:
+        rotateBack = ['-rotate', '-90']
 
     # OUTPUT
     ops = " ".join(cropFace + rotateLandscape + resize + shit + rotateBack)
