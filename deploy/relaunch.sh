@@ -5,6 +5,6 @@ if [ -n "$current_pid" ]; then
 fi
 nohup node instagehrm_server.js 1>/dev/null 2>/dev/null 3>/dev/null &
 sudo cp instagehrm.siteconfig /etc/nginx/sites-enabled/instagehrm
-sudo /etc/init.d/nginx reload
+sudo /etc/init.d/nginx reload >/dev/null
 echo successfully relaunched
 node regenAll.js
