@@ -15,23 +15,6 @@ a:hover {
     background: 000;
 }
 
-.home {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 55px;
-    text-align: left;
-    padding-left: 5px;
-    color: #310;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.home:hover {
-    background: #fca;
-}
-
 img {
     margin: 0;
 }

@@ -11,8 +11,9 @@ function generatePage(data) {
     orientation = "portrait";
   }
   var html = "<!doctype html>\n"+
+    "<link rel=stylesheet type=text/css href=main.css></link>\n"+
     "<link rel=stylesheet type=text/css href=image.css></link>\n"+
-    "<title>INSTAGEHRMED : " + id + "</title>\n"+
+    "<title>" + id + " : instagehrm</title>\n"+
     // facecode
     '<div id="fb-root"></div>'+
     '<script>(function(d, s, id) {'+
