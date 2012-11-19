@@ -73,6 +73,10 @@ form > input {
     font-size: 20px;
 }
 
-.terms {
+.plainsection {
     margin: 10px;
+}
+
+.center {
+    text-align: center;
 }
