@@ -61,6 +61,8 @@ function saveImageInfo(data, next) {
 
   fs.writeFile(generatedFolder + "/" + name, html, function(err) {
     if (err) return next(err);
-    next(null, name);
+    next(null, { file: name,
+                 id: id,
+                 deletehash: data.upload.image.deletehash });
   });
 }
