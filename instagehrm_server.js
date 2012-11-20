@@ -27,15 +27,17 @@ function dealWithTheUpload(req, next) {
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
     if (err) return next(err);
+    if (!files.image)
+      return next({instagehrmError: "No image given."});
     var file = files.image.path;
-    ig.processImage(file, function(err, newfile) {
-      if (err) return next(err);
-      res.redirect(newfile);
-    });
+    ig.processImage(file, next);
   });
 }
 
 function returnError(res, err) {
+  if (err && err.instagehrmError)
+    return res.json(500, err.instagehrmError);
+  // generic error
   res.statusCode = 500;
   res.end("" + err);
 }

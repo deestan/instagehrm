@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <link rel=stylesheet type=text/css href=main.css>
+<link rel=stylesheet type=text/css href=index.css>
+<script src=jquery-1.7.2.min.js></script>
+<script src=jquery.form.js></script>
+<script src=index.js></script>
 <title>instagehrm - ineptify your photographs</title>
+
 <div class=titlebar>
   <a class=home href=/>&lt;&lt;</a>
 <div class=title>INSTAGEHRM</div>
 </div>
 <form method=POST enctype=multipart/form-data action=1/upload>
   <input type=file name=image />
-  <input type=submit value="Upload" />
+  <input type=submit value=Upload />
   <p>Upload a photo, and we will make it look like it was taken by an inept photographer.</p>
 </form>
 <div class=plainsection>Uploaded images will be stored anonymously on <a href=http://www.imgur.com>imgur</a>, and are subject to <a href=http://imgur.com/tos>imgur terms of service</a>.</div>
 <div class="plainsection center"><a href=wat.html>How does it work?</a></div>
+
+<div id=uploadstatus>
+  <div class=backplate></div>
+  <div class=messageplate>
+    <span class=message>MESSAGE</span>
+    <a href=# class=close>X</a>
+  </div>
+</div>
