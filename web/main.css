@@ -2,9 +2,12 @@ body {
     font-family: arial;
     background: #310;
     color: #fff;
+    font-size: 18px;
+}
+
+.center-column {
     width: 400px;
     margin: auto;
-    font-size: 18px;
 }
 
 .home {

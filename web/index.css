@@ -2,6 +2,21 @@
     display: none;
 }
 
+#uploads {
+    margin: 20px 50px 0 50px;
+    text-align: center;
+}
+
+#uploads a {
+    margin: 5px;
+}
+
+#uploads img {
+    width: 90px;
+    height: 90px;
+    border: 0;
+}
+
 .backplate {
     position: fixed;
     left: 0;

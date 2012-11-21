@@ -1,16 +1,18 @@
 <!doctype html>
 <title>wat : instagehrm</title>
 <link rel=stylesheet href=main.css type=text/css>
-<div class=titlebar>
-  <a class=home href=/>&lt;&lt;</a>
-<div class=title>WAT</div>
+<div class=center-column>
+  <div class=titlebar>
+    <a class=home href=/ >&lt;&lt;</a>
+    <div class=title>WAT</div>
+  </div>
+  <h1>How?</h1>
+  <p>
+    Uploaded pictures are first scanned for faces by <a href=http://libccv.org/ >libccv</a>, then if possible cropped so that the top and edge of the found faces are clipped.  After that, it goes through some <a href=http://www.imagemagick.org/ >ImageMagick</a> conversions to add camera shake and various camera-isn't-properly-configured effects.  Then it's uploaded to <a href=http://www.imgur.com/ >imgur</a> and a hosting .html file is generated to display the result.
+  </p>
+  <h1>Why?</h1>
+  <p>
+    I was bored and needed to play around with some technology.  I wanted to gain familiarity with ImageMagick, Amazon EC2, form upload/download in node.js, and to test out some deployment mechanisms.
+  </p>
+  <a href="https://github.com/deestan/instagehrm"><img style="position: absolute; top: 0; right: 0; border: 0;" src="forkme.png" alt="Fuck me in the GitHub"></a>
 </div>
-<h1>How?</h1>
-<p>
-Uploaded pictures are first scanned for faces by <a href=http://libccv.org/>libccv</a>, then if possible cropped so that the top and edge of the found faces are clipped.  After that, it goes through some <a href=http://www.imagemagick.org/>ImageMagick</a> conversions to add camera shake and various camera-isn't-properly-configured effects.  Then it's uploaded to <a href=http://www.imgur.com/>imgur</a> and a hosting .html file is generated to display the result.
-</p>
-<h1>Why?</h1>
-<p>
-I was bored and needed to play around with some technology.  I wanted to gain familiarity with ImageMagick, Amazon EC2, form upload/download in node.js, and to test out some deployment mechanisms.
-</p>
-<a href="https://github.com/deestan/instagehrm"><img style="position: absolute; top: 0; right: 0; border: 0;" src="forkme.png" alt="Fuck me in the GitHub"></a>

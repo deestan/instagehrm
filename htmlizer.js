@@ -28,7 +28,7 @@ function generatePage(data) {
     "}(document, 'script', 'facebook-jssdk'));</script>"+
     // body
     "<div class=titlebar>"+
-    " <a class=home href=/>&lt;&lt;</a>"+
+    " <a class=home href=/ >&lt;&lt;</a>"+
     " <div class=title>INSTAGEHRMED : " + id + "</div>"+
     "</div>"+
     "<a href=\""+data.upload.links.imgur_page+"\">"+

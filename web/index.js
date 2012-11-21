@@ -23,6 +23,15 @@ function uploadError(x) {
   $("#uploadstatus .close").show();
 }
 
+function fillUploadedList() {
+  var list = $("#uploads");
+  for (var i = 0; i < localStorage.length; i++) {
+    var id = localStorage.key(i);
+    $("<a href="+id+".html><img src=http://i.imgur.com/"+id+"s.jpg></a>")
+      .appendTo(list);
+  }
+}
+
 $(function() {
   $("form")
     .attr("action", "1/upload.json")
@@ -33,4 +42,6 @@ $(function() {
     });
 
   $("#uploadstatus .close").on("click", hideUploadStatus);
+
+  fillUploadedList();
 });
