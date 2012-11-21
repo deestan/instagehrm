@@ -13,6 +13,9 @@ function generatePage(data) {
   var html = "<!doctype html>\n"+
     "<link rel=stylesheet type=text/css href=main.css></link>\n"+
     "<link rel=stylesheet type=text/css href=image.css></link>\n"+
+    "<script src=jquery-1.7.2.min.js></script>\n"+
+    "<script>var image_id='" + id + "';</script>\n"+
+    "<script src=image.js></script>\n"+
     "<title>" + id + " : instagehrm</title>\n"+
     // facecode
     '<div id="fb-root"></div>'+
@@ -31,7 +34,12 @@ function generatePage(data) {
     "<a href=\""+data.upload.links.imgur_page+"\">"+
     " <img class="+ orientation +" src=\""+data.upload.links.original+"\">"+
     "</a>"+
-    "<div class=img-footer>click image to go to its <a href=http://www.imgur.com>imgur</a> page</div>"+
+    "<div class=img-footer>"+
+    "<div>"+
+    "click image to go to its <a href=http://www.imgur.com>imgur</a> page"+
+    "</div>"+
+    "<div><a id=deletelink href=#>Delete from imgur</a></div>"+
+    "</div>"+
     "<div id=shares>"+
     "<span>twat this picture on face+</span>"+
     // twat
