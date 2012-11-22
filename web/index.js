@@ -11,6 +11,7 @@ function uploadStarting() {
 }
 
 function hideUploadStatus() {
+  $("#uploadstatus .close").hide();
   $("#uploadstatus").hide();
 }
 
